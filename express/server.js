@@ -42,17 +42,16 @@ app.post('/postit', function(req, res) {
 
 //update
 app.post('/postit/:id', function(req, res) {
-  collection.update({_id: req.params.id}, req.body, function(error, results) {
-    res.send(req.body)
+  collection.update({_id: req.params.id}, {$set : { text: req.body.text ,  star: req.body.star } }, function(error, results) {
   })
+  res.send(req.body)
 });
 
 //update
 app.delete('/postit/:id', function(req, res) {
-  console.log(req.params)
-  collection.remove({_id: req.params.id}, req.body, function(error, results) {
-  	res.send('Postit deleted')
+  collection.remove({_id: req.params.id}, function(error, results) { 
   })
+  res.send('Postit deleted');
 });
 
 
