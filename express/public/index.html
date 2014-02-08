@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+    <head>
+        <title>Angular app</title>
+        <link rel="stylesheet" media="screen" href="stylesheets/main.css">
+        <link rel="stylesheet" media="screen" href="stylesheets/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-route.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-resource.min.js"></script>
+        <script src="javascripts/postit.js"></script>
+    </head>
+    <body>
+       <div class="container">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <a class="brand" href="/">Home</a>
+                <ul class="nav">
+                  <li><a href="/">Postit Manager</a></li>
+                  <li><a href="/#/about">About</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class=content>
+                <div class="view-container">
+    				<div ng-view class="view-frame"></div>
+  				</div>
+            </div>
+        </div>
+    </body>
+</html>
