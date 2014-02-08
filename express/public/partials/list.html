@@ -1,0 +1,19 @@
+<div ng-controller="PostitCtrl">
+      
+      <label for="starsOnly">Favorites only:</label><input type="checkbox" name="starsOnly" ng-model="starsOnly"/>
+      <hr/>
+
+      <h3>Add post-it</h3>
+      <input name="text" ng-model="createForm.text"/>
+      <button class="btn btn-primary" ng-click="create()">Add</button>
+      <hr/><br/>
+
+      <div>Search: <input ng-model="searchText"></div>
+      <br/>
+
+      <div class="list" ng-repeat="postit in postits | filter:searchText | filter:starsOnlyFilter()">
+         <postit/>
+      </div>
+
+      <button class="btn btn-primary" ng-click="createEmpty()">+</button>
+</div>
