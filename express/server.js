@@ -41,7 +41,7 @@ app.post('/postit', function(req, res) {
 });
 
 //update
-app.post('/postit/:id', function(req, res) {
+app.put('/postit/:id', function(req, res) {
   collection.update({_id: req.params.id}, {$set : { text: req.body.text ,  star: req.body.star } }, function(error, results) {
   })
   res.send(req.body)
